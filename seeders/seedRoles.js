@@ -3,9 +3,9 @@ import sequelize from '../config/database.js';
 
 async function seedRoles() {
   try {
-    // Connect to DB
+    
     await sequelize.authenticate();
-    console.log('✅ Connected to database');
+    console.log(' Connected to database');
 
     // Seed default roles
     await Role.bulkCreate([
@@ -15,9 +15,9 @@ async function seedRoles() {
     ], { ignoreDuplicates: true });
 
     console.log('✅ Roles seeded successfully!');
-    process.exit(); // Exit after finish
+    process.exit(); 
   } catch (error) {
-    console.error('❌ Error seeding roles:', error);
+    console.error('Error seeding roles:', error);
     process.exit(1);
   }
 }
